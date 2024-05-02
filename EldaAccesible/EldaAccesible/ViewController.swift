@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        geoLocate(origin: "Calle Cuba, 2, San Vicente", destination: "Calle Francisco de Quevedo, 46, Elda")
+        mapView.delegate = self
     }
     
     @IBAction func showRouteButton(_ sender: Any) {
@@ -42,8 +42,8 @@ class ViewController: UIViewController {
                     }
                     if let destinationPlaceMark = placeMarks?.first{
                         let destinationCoordenates = destinationPlaceMark.location?.coordinate
-                        print(originCoordenates)
-                        print(destinationCoordenates)
+                        
+                        self.showRoute(originCoordenate: originCoordenates!, destinationCoordenates: destinationCoordenates!)
                     }
                 }
             }
@@ -68,6 +68,15 @@ class ViewController: UIViewController {
             }
             
         }
+    }
+}
+
+extension ViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, rendererFor overlay: any MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.purple
+        renderer.lineWidth = 5.0
+        return renderer
     }
 }
 

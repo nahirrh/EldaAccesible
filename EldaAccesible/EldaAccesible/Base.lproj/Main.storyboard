@@ -34,7 +34,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXP-Tt-7oM">
                                 <rect key="frame" x="137.66666666666666" y="773.66666666666663" width="118" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Mostrar ruta"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Mostrar ruta"/>
                                 <connections>
                                     <action selector="showRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNW-fg-hf3"/>
                                 </connections>
