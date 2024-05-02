@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
@@ -16,11 +17,36 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        geoLocate(origin: "Calle Cuba, 2, San Vicente", destination: "Calle Francisco de Quevedo, 46, Elda")
     }
-
+    
     @IBAction func showRouteButton(_ sender: Any) {
     }
     
+    func geoLocate(origin: String, destination: String) {
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(origin) { placeMarks, error in
+            if let myError = error {
+                print("Error origin address")
+                return
+            }
+            if let originPlaceMark = placeMarks?.first{
+                let originCoordenates = originPlaceMark.location?.coordinate
+                
+                geocoder.geocodeAddressString(destination) { placeMarks, error in
+                    if let myError = error {
+                        print ("Erron destination address")
+                        return
+                    }
+                    if let destinationPlaceMark = placeMarks?.first{
+                        let destinationCoordenates = destinationPlaceMark.location?.coordinate
+                        print(originCoordenates)
+                        print(destinationCoordenates)
+                    }
+                }
+            }
+        }
+    }
 }
 
