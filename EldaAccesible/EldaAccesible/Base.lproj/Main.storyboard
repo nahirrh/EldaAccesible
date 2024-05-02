@@ -32,12 +32,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXP-Tt-7oM">
-                                <rect key="frame" x="146.66666666666666" y="773.66666666666663" width="100" height="34.333333333333371"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="7bD-UV-jCj"/>
-                                </constraints>
+                                <rect key="frame" x="137.66666666666666" y="773.66666666666663" width="118" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Buscar"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Mostrar ruta"/>
+                                <connections>
+                                    <action selector="showRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNW-fg-hf3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,10 +57,15 @@
                             <constraint firstItem="bm2-sC-NTt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wbU-pC-hcf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="destinationTextField" destination="nkI-99-yxT" id="McX-nT-hYa"/>
+                        <outlet property="mapView" destination="bm2-sC-NTt" id="aUl-pP-xyd"/>
+                        <outlet property="originTextField" destination="XXD-Pe-W7v" id="ROU-3d-t3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="-2"/>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
