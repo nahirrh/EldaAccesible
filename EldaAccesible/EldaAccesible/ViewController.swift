@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showRouteButton(_ sender: Any) {
+        geoLocate(origin: originTextField.text!, destination: destinationTextField.text!)
     }
     
     func geoLocate(origin: String, destination: String) {
@@ -46,6 +47,26 @@ class ViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    func showRoute(originCoordenate: CLLocationCoordinate2D, destinationCoordenates: CLLocationCoordinate2D){
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: originCoordenate))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destinationCoordenates))
+        request.requestsAlternateRoutes = true
+        request.transportType = .walking
+        
+        let directions = MKDirections(request: request)
+        
+        directions.calculate { response, error in
+            guard let response = response else {return}
+            
+            if let route = response.routes.first{
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+            
         }
     }
 }
