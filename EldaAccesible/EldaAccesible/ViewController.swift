@@ -39,7 +39,7 @@ class ViewController: UIViewController {
                 print("Error origin address")
                 return
             }
-            if let originPlaceMark = placeMarks?.first{
+            if let originPlaceMark = placeMarks?.first {
                 let originCoordenates = originPlaceMark.location?.coordinate
                 
                 geocoder.geocodeAddressString(destination) { placeMarks, error in
@@ -47,24 +47,34 @@ class ViewController: UIViewController {
                         print ("Erron destination address")
                         return
                     }
-                    if let destinationPlaceMark = placeMarks?.first{
+                    if let destinationPlaceMark = placeMarks?.first {
                         let destinationCoordenates = destinationPlaceMark.location?.coordinate
-                        
-                        self.showRoute(originCoordenate: originCoordenates!, destinationCoordenates: destinationCoordenates!)
+                        if self.isElda(coordenates: originCoordenates!) && self.isElda(coordenates: destinationCoordenates!){
+                            self.showRoute(originCoordenate: originCoordenates!, destinationCoordenates: destinationCoordenates!)
+                        }
+                        else {
+                            self.showAlert()
+                        }
                     }
                 }
             }
         }
     }
     
+    func showAlert(){
+        let alert = UIAlertController(title: "Error", message: "La ruta debe ser en Elda", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 //  Check if coordeantes are in Elda or not
-    func isElda(coordenates: CLLocation) -> Bool {
+    func isElda(coordenates: CLLocationCoordinate2D) -> Bool {
         let topLimitLongitude = -0.8050361294642698
         let topLimitLatitude = 38.490657721389795
         let bottomLimitLongitude = -0.7824278387625156
         let bottomLimitLatitude = 38.45913775904208
         
-        if coordenates.coordinate.latitude > topLimitLatitude || coordenates.coordinate.latitude < bottomLimitLatitude || coordenates.coordinate.longitude > bottomLimitLongitude || coordenates.coordinate.longitude < topLimitLongitude{
+        if coordenates.latitude > topLimitLatitude || coordenates.latitude < bottomLimitLatitude || coordenates.longitude > bottomLimitLongitude || coordenates.longitude < topLimitLongitude{
             return false
         }
             
