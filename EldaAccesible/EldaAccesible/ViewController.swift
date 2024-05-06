@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        let eldaLocation = CLLocation(latitude: 38.4778306, longitude: -0.7998126)
+        mapView.centerToLocation(eldaLocation)
     }
     
     @IBAction func showRouteButton(_ sender: Any) {
@@ -77,6 +79,13 @@ extension ViewController: MKMapViewDelegate{
         renderer.strokeColor = UIColor.purple
         renderer.lineWidth = 5.0
         return renderer
+    }
+}
+
+extension MKMapView{
+    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 500) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        setRegion(coordinateRegion, animated: true)
     }
 }
 
