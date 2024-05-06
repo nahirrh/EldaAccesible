@@ -19,11 +19,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         
+        
         let eldaLocation = CLLocation(latitude: 38.4778306, longitude: -0.7998126)
         mapView.centerToLocation(eldaLocation)
         
         let coordinateRegion = MKCoordinateRegion(center: eldaLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapView.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: coordinateRegion), animated: true)
+        
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 10000)
+        mapView.setCameraZoomRange(zoomRange, animated: true)
+        mapView.delegate = self
     }
     
     @IBAction func showRouteButton(_ sender: Any) {
