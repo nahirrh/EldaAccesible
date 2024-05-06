@@ -56,6 +56,22 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+//  Check if coordeantes are in Elda or not
+    func isElda(coordenates: CLLocation) -> Bool {
+        let topLimitLongitude = -0.8050361294642698
+        let topLimitLatitude = 38.490657721389795
+        let bottomLimitLongitude = -0.7824278387625156
+        let bottomLimitLatitude = 38.45913775904208
+        
+        if coordenates.coordinate.latitude > topLimitLatitude || coordenates.coordinate.latitude < bottomLimitLatitude || coordenates.coordinate.longitude > bottomLimitLongitude || coordenates.coordinate.longitude < topLimitLongitude{
+            return false
+        }
+            
+        
+        return true
+    }
+    
 //  Drow route
     func showRoute(originCoordenate: CLLocationCoordinate2D, destinationCoordenates: CLLocationCoordinate2D){
         let request = MKDirections.Request()
