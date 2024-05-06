@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  EldaAccesible
-//
-//  Created by Manager on 2/5/24.
-//
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -19,13 +12,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         
-        
+//      Center Location in Elda
         let eldaLocation = CLLocation(latitude: 38.4778306, longitude: -0.7998126)
         mapView.centerToLocation(eldaLocation)
         
+//      Set Elda map bounderies
         let coordinateRegion = MKCoordinateRegion(center: eldaLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapView.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: coordinateRegion), animated: true)
         
+//      Set max zoom range to Elda map
         let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 10000)
         mapView.setCameraZoomRange(zoomRange, animated: true)
         mapView.delegate = self
@@ -35,6 +30,7 @@ class ViewController: UIViewController {
         geoLocate(origin: originTextField.text!, destination: destinationTextField.text!)
     }
     
+//  Transform user parameters (origin and destination) to coordenates
     func geoLocate(origin: String, destination: String) {
         let geocoder = CLGeocoder()
         
@@ -60,7 +56,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+//  Drow route
     func showRoute(originCoordenate: CLLocationCoordinate2D, destinationCoordenates: CLLocationCoordinate2D){
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: originCoordenate))
@@ -81,8 +77,11 @@ class ViewController: UIViewController {
         }
     }
 }
+//  MARK: - MKMapViewDelegate
 
 extension ViewController: MKMapViewDelegate{
+    
+//  Set renderer parameters to style route
     func mapView(_ mapView: MKMapView, rendererFor overlay: any MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.purple
