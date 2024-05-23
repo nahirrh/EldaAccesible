@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		142CABBA2BFF4BB7003E6EC0 /* EA.png in Resources */ = {isa = PBXBuildFile; fileRef = 142CABB92BFF4BB7003E6EC0 /* EA.png */; };
+		14903CEE2BFF9DE8008687CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903CED2BFF9DE8008687CD /* LoginViewController.swift */; };
 		14BBE0692BE3BA9D004AD6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBE0682BE3BA9D004AD6E2 /* AppDelegate.swift */; };
 		14BBE06B2BE3BA9D004AD6E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBE06A2BE3BA9D004AD6E2 /* SceneDelegate.swift */; };
 		14BBE06D2BE3BA9D004AD6E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBE06C2BE3BA9D004AD6E2 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		142CABB92BFF4BB7003E6EC0 /* EA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EA.png; sourceTree = "<group>"; };
+		14903CED2BFF9DE8008687CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		14BBE0652BE3BA9D004AD6E2 /* EldaAccesible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EldaAccesible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BBE0682BE3BA9D004AD6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14BBE06A2BE3BA9D004AD6E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				14BBE0682BE3BA9D004AD6E2 /* AppDelegate.swift */,
 				14BBE06A2BE3BA9D004AD6E2 /* SceneDelegate.swift */,
 				14BBE06C2BE3BA9D004AD6E2 /* ViewController.swift */,
+				14903CED2BFF9DE8008687CD /* LoginViewController.swift */,
 				14BBE06E2BE3BA9D004AD6E2 /* Main.storyboard */,
 				14BBE0712BE3BAA0004AD6E2 /* Assets.xcassets */,
 				142CABB92BFF4BB7003E6EC0 /* EA.png */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14903CEE2BFF9DE8008687CD /* LoginViewController.swift in Sources */,
 				14BBE06D2BE3BA9D004AD6E2 /* ViewController.swift in Sources */,
 				14BBE0692BE3BA9D004AD6E2 /* AppDelegate.swift in Sources */,
 				14BBE06B2BE3BA9D004AD6E2 /* SceneDelegate.swift in Sources */,

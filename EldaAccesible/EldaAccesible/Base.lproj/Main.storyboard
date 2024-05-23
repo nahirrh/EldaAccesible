@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="TZv-F1-0qt">
             <objects>
-                <viewController id="Ikm-dH-8AH" sceneMemberID="viewController">
+                <viewController id="Ikm-dH-8AH" customClass="LoginViewController" customModule="EldaAccesible" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qmm-Op-WwK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +105,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Seguir como invitada"/>
+                                <connections>
+                                    <action selector="GuestButtonTouched:" destination="Ikm-dH-8AH" eventType="touchUpInside" id="bhy-Vv-KFD"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vvu-zN-bFu">
                                 <rect key="frame" x="87" y="401" width="218" height="34"/>
@@ -126,6 +129,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="LoginButtonTouched:" destination="Ikm-dH-8AH" eventType="touchUpInside" id="vw4-bW-6Ff"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZBx-VR-bp4"/>
