@@ -2,15 +2,19 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var originTextField: UITextField!
     @IBOutlet weak var destinationTextField: UITextField!
     
+    @IBOutlet weak var showRouteButton: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        setStyles()
         
 //      Center Location in Elda
         let eldaLocation = CLLocation(latitude: 38.4778306, longitude: -0.7998126)
@@ -24,6 +28,27 @@ class ViewController: UIViewController {
         let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 10000)
         mapView.setCameraZoomRange(zoomRange, animated: true)
         mapView.delegate = self
+    }
+    
+    private func setStyles(){
+        setStyles(for: originTextField)
+        setStyles(for: destinationTextField)
+        setButtonsStyles(for: profileButton)
+        setButtonsStyles(for: showRouteButton)
+    }
+    
+    private func setStyles(for textField: UITextField) {
+        textField.layer.shadowColor = UIColor.black.cgColor
+        textField.layer.shadowOffset = CGSize(width: 0, height: 2)
+        textField.layer.shadowOpacity = 0.7
+        textField.layer.shadowRadius = 10
+    }
+    
+    private func setButtonsStyles(for button: UIButton) {
+        button.layer.cornerRadius = 20
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowOpacity = 0.7
     }
     
     @IBAction func showRouteButton(_ sender: Any) {
@@ -105,7 +130,7 @@ class ViewController: UIViewController {
 }
 //  MARK: - MKMapViewDelegate
 
-extension ViewController: MKMapViewDelegate{
+extension MapViewController: MKMapViewDelegate{
     
 //  Set renderer parameters to style route
     func mapView(_ mapView: MKMapView, rendererFor overlay: any MKOverlay) -> MKOverlayRenderer {
