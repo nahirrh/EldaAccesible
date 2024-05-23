@@ -21,27 +21,30 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Origen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XXD-Pe-W7v" userLabel="Origin Text Field">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Origen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XXD-Pe-W7v" userLabel="Origin Text Field">
                                 <rect key="frame" x="10" y="685.66666666666663" width="373" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nkI-99-yxT" userLabel="Destination Text Field">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nkI-99-yxT" userLabel="Destination Text Field">
                                 <rect key="frame" x="10" y="729.66666666666663" width="373" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXP-Tt-7oM">
-                                <rect key="frame" x="137.66666666666666" y="773.66666666666652" width="118" height="34.333333333333371"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXP-Tt-7oM">
+                                <rect key="frame" x="137.66666666666666" y="773.66666666666663" width="118" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Mostrar ruta"/>
                                 <connections>
                                     <action selector="showRouteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNW-fg-hf3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-mP-Wuv">
-                                <rect key="frame" x="313" y="91" width="80" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-mP-Wuv">
+                                <rect key="frame" x="313" y="91" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.33818274739999998" green="0.24600401520000001" blue="0.5647364855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Scw-l7-7p7"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Perfil" image="person.crop.circle" catalog="system">
@@ -69,7 +72,6 @@
                             <constraint firstItem="bm2-sC-NTt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j8a-LT-WF2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bm2-sC-NTt" secondAttribute="bottom" id="qEy-kS-Ybw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nkI-99-yxT" secondAttribute="trailing" constant="10" id="r14-iF-L7k"/>
-                            <constraint firstItem="XXD-Pe-W7v" firstAttribute="top" secondItem="g9E-mP-Wuv" secondAttribute="bottom" constant="559.66999999999996" id="r8z-ca-QL3"/>
                             <constraint firstItem="bm2-sC-NTt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wbU-pC-hcf"/>
                         </constraints>
                     </view>

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         mapView.centerToLocation(eldaLocation)
         
 //      Set Elda map bounderies
-        let coordinateRegion = MKCoordinateRegion(center: eldaLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        let coordinateRegion = MKCoordinateRegion(center: eldaLocation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
         mapView.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: coordinateRegion), animated: true)
         
 //      Set max zoom range to Elda map
@@ -117,7 +117,7 @@ extension ViewController: MKMapViewDelegate{
 }
 
 extension MKMapView{
-    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 500) {
+    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
     }
